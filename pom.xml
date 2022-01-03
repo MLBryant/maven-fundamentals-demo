@@ -28,18 +28,18 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
-            <version>5.2.0.BUILD-SNAPSHOT</version>
+            <version>5.3.14</version>
         </dependency>
     </dependencies>
 
-    <repositories>
-        <repository>
-            <id>spring-snapshot</id>
-            <url>https://repo.spring.io/ui/repos/tree/General/snapshot</url>
-            <snapshots><enabled>true</enabled></snapshots>
-            <releases><enabled>false</enabled></releases>
-        </repository>
-    </repositories>
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>spring-snapshot</id>-->
+<!--            <url>https://repo.spring.io/ui/repos/tree/General/libs-snapshot</url>-->
+<!--            <snapshots><enabled>true</enabled></snapshots>-->
+<!--            <releases><enabled>false</enabled></releases>-->
+<!--        </repository>-->
+<!--    </repositories>-->
 
     <build>
         <plugins>
@@ -49,6 +49,16 @@
                 <version>3.8.0</version>
                 <configuration>
                     <release>17</release>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <includes>
+                        <include>**/*.xml</include>
+                    </includes>
                 </configuration>
             </plugin>
         </plugins>
